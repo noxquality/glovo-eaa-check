@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glovo, measured against its own accessibility statement · Nox Quality Studio</title>
+<meta name="description" content="Independent accessibility measurement of Glovo's public product, checked against the company's own published accessibility statement.">
+<link rel="canonical" href="https://noxquality.github.io/glovo-eaa-check/report.html">
+<link rel="alternate" hreflang="en" href="https://noxquality.github.io/glovo-eaa-check/report.html">
+<link rel="alternate" hreflang="es" href="https://noxquality.github.io/glovo-eaa-check/informe.html">
+<link rel="alternate" hreflang="x-default" href="https://noxquality.github.io/glovo-eaa-check/report.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<style>
+  .puerta .pag{padding-top:44px;padding-bottom:52px}
+  .puerta h1{font-size:clamp(28px,4.2vw,42px);margin-bottom:28px}
+  .puertas{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+  .puertas a{display:block;background:var(--verde);color:#fff;text-decoration:none;
+             padding:22px 24px;border-radius:14px;border-bottom:5px solid #012e26}
+  .puertas a:hover{background:#024a3d}
+  .puertas b{display:block;font-size:21px;margin-bottom:4px}
+  .puertas span{font-size:15px;color:var(--sobre-verde)}
+  .aclara{margin-top:26px;font-size:15px;color:var(--tinta-suave)}
+  @media (max-width:640px){ .puertas{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<article class="hoja">
+
+  <div class="membrete" aria-hidden="true"></div>
+
+  <main class="puerta"><div class="pag">
+    <h1>Glovo, measured against its own accessibility statement</h1>
+    <p>An independent, unsolicited measurement of Glovo's public product, checked against the five promises written into the company's own accessibility statement. Pick a language.</p>
+    <nav class="puertas">
+      <a href="report.html" lang="en"><b>Read in English</b><span>Full report, 8 October 2026</span></a>
+      <a href="informe.html" lang="es"><b>Leer en español</b><span>Informe completo, 8 de octubre de 2026</span></a>
+    </nav>
+    <p class="aclara" lang="es">Medición independiente y no solicitada. No está afiliada a Glovo ni aprobada por Glovo.</p>
+  </div></main>
+
+  <footer class="pie"><div class="pag">
+    <span><a class="discreto" href="https://noxquality.com">Nox Quality Studio</a> · <a href="mailto:hello@noxquality.com">hello@noxquality.com</a></span>
+    <span class="firma">
+      <a class="by firma-link" href="https://github.com/missyeahhh">by<span class="sol">sol</span></a>
+    </span>
+  </div></footer>
+
+</article>
+<script>
+/* Lleva al idioma del navegador. Si no hay JS, la página de arriba ya sirve:
+   los dos links están visibles y no depende de esto.
+   replace() en vez de href para no romper el botón de atrás. */
+(function () {
+  try {
+    var idiomas = navigator.languages || [navigator.language || ''];
+    /* Se respeta el ORDEN de preferencia: gana el primero que sea es o en.
+       Con ["en-GB","en-ES","es-AR"] el idioma preferido es inglés, aunque
+       haya español más abajo en la lista. */
+    for (var i = 0; i < idiomas.length; i++) {
+      var l = (idiomas[i] || '').toLowerCase();
+      if (l.indexOf('es') === 0) { location.replace('informe.html'); return; }
+      if (l.indexOf('en') === 0) { location.replace('report.html'); return; }
+    }
+    location.replace('report.html');
+  } catch (e) { /* se queda en esta página, que funciona igual */ }
+})();
+</script>
+</body>
+</html>
