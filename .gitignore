@@ -1,0 +1,18 @@
+# Lista blanca, igual que chatbot-observatory.
+# Todo ignorado por defecto. Se habilita a mano, archivo por archivo.
+# Motivo: este repo es público y vive al lado de material de clientes.
+
+# 1. Todo afuera.
+*
+
+# 2. Adentro solo esto.
+!.gitignore
+!README.md
+!LEEME.md
+!informe.html
+!report.html
+!estilo.css
+!textura-glovo.png
+!LICENSE
+!evidencia/
+!evidencia/*.md

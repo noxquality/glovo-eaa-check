@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glovo medido contra su propia declaración de accesibilidad · Nox Quality Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<article class="hoja">
+
+  <div class="membrete" aria-hidden="true"></div>
+
+  <header><div class="pag portada">
+      <p class="idioma"><strong>Español</strong> · <a href="report.html">English</a></p>
+      <h1>Glovo, medido contra su propia declaración</h1>
+      <p class="bajada">Glovo hizo algo que muy pocas empresas hacen: <strong>publicó una declaración de accesibilidad</strong> y se comprometió por escrito con WCAG 2.1 nivel AA y EN 301 549. Es el estándar con el que se mide accesibilidad en Europa, así que es el que se usa acá.</p>
+      <p class="bajada" style="margin-top:14px">Las <strong>cinco promesas concretas</strong> de ese documento se buscaron en el producto, una por una. Dos se cumplen, una queda a medias y dos no se cumplen. Las dos que fallan tienen arreglo, y el arreglo es más chico de lo que parece.</p>
+  </div></header>
+
+  <section><div class="pag">
+    <p class="aviso"><strong>Medición independiente y no solicitada, del 8 de octubre de 2026.</strong> No está afiliada a Glovo ni aprobada por Glovo. Mide el producto público, tal como lo encuentra cualquiera que entra sin cuenta. No mide equipos, no mide personas, y ninguna falla se atribuye a nadie.</p>
+    <p style="margin-top:28px">Esta pieza <strong>no hace un reclamo legal</strong>. El European Accessibility Act está en vigor desde junio de 2025 y España lo traspuso con la Ley 11/2023, pero si Glovo cumple o incumple una norma lo decide un organismo, no una auditoría privada. Lo que acá se comprueba es otra cosa: si el producto hace lo que dice el documento que la propia empresa publicó.</p>
+    <div class="evidencia">
+      <p class="rotulo">La declaración, enlazada desde el pie de todas sus páginas, en ocho países</p>
+      <p><a href="https://glovoapp.com/docs/es/legal/regulatory-eaa/?country=es">glovoapp.com/docs/es/legal/regulatory-eaa</a></p>
+    </div>
+  </div></section>
+
+  <section class="verde"><div class="pag">
+    <h2>Las cinco promesas</h2>
+    <table>
+      <thead><tr><th>La promesa, textual</th><th>Veredicto</th><th>Qué lo sostiene o lo rompe</th></tr></thead>
+      <tbody>
+        <tr><td>Contraste suficiente entre texto y fondo</td><td><span class="v v-si">se sostiene</span></td><td>1 fallo sobre 776 nodos medidos: el placeholder del buscador, 4,12:1 contra un umbral de 4,5:1</td></tr>
+        <tr><td>Navegación sencilla, títulos y puntos de referencia</td><td><span class="v v-si">se sostiene</span></td><td>Títulos descriptivos y región <code>main</code>. Faltan el enlace para saltar al contenido y el título de dos páginas</td></tr>
+        <tr><td>Notificaciones de error claras y descriptivas</td><td><span class="v v-medio">a medias</span></td><td>El aviso de dirección es impecable. El error de opciones obligatorias no se anuncia</td></tr>
+        <tr><td>Accesibilidad del teclado</td><td><span class="v v-no">no se sostiene</span></td><td>El campo de dirección del home, primer paso del producto, no se opera con teclado</td></tr>
+        <tr><td>Etiquetas accesibles en elementos interactivos</td><td><span class="v v-no">no se sostiene</span></td><td>40 de 40 inputs del diálogo de producto sin nombre accesible</td></tr>
+      </tbody>
+    </table>
+  </div></section>
+
+  <section class="menta"><div class="pag">
+    <h2>Lo que funciona</h2>
+    <p>Medido con el mismo método y la misma vara que los fallos. Las promesas 1 y 2, contraste y navegación, se cumplen y su evidencia es esta tabla. Las otras tres tienen una sección cada una, más abajo.</p>
+    <table>
+      <thead><tr><th>Qué</th><th>Medido</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td>La declaración misma</td><td>Nombra estándar y versión, separa contenido de terceros, admite límites, en 8 países</td><td class="num">existe</td></tr>
+        <tr><td>Contraste de color</td><td>Nodos de texto visibles con color y fondo calculados, en 4 páginas. El único fallo es el placeholder del buscador</td><td class="num">1 fallo / 776</td></tr>
+        <tr><td>Texto alternativo</td><td>Imágenes visibles sin atributo <code>alt</code></td><td class="num">0 / 521</td></tr>
+        <tr><td>Nombre de botones</td><td>Botones y <code>role=button</code> visibles sin nombre</td><td class="num">0 / 126</td></tr>
+        <tr><td>Nombre de links</td><td>Links sin nombre en home, listado y resultados</td><td class="num">0 / 298</td></tr>
+        <tr><td>Zoom</td><td><code>maximum-scale=5, user-scalable=yes</code></td><td class="num">no bloquea</td></tr>
+        <tr><td>Reflow a 320px</td><td>Desborde horizontal en home, listado y resultados. La ficha de local sí desborda</td><td class="num">3 de 4</td></tr>
+        <tr><td>Diálogo de dirección</td><td><code>dialog aria-modal</code>, foco inicial correcto, Escape cierra y devuelve el foco</td><td class="num">bien hecho</td></tr>
+        <tr><td>Aviso de dirección faltante</td><td><code>role=alert</code>, <code>aria-live=assertive</code>, y el texto dice qué hacer</td><td class="num">bien hecho</td></tr>
+        <tr><td>Arreglos desde agosto</td><td>Enter dispara la búsqueda, la búsqueda ya devuelve los cerrados, el carrito ya no se traga el producto</td><td class="num">3 arreglados</td></tr>
+      </tbody>
+    </table>
+  </div></section>
+
+  <section><div class="pag">
+    <p class="tipo">Promesa 3 de 5 · a medias</p>
+    <blockquote class="cita">"Notificaciones de error: mensajes de error claros y descriptivos para guiar a los usuarios en la resolución de problemas."<cite>Declaración de accesibilidad de Glovo</cite></blockquote>
+    <h3>Un aviso se anuncia y el otro no</h3>
+    <p>El aviso de dirección faltante está impecable: <code>role="alert"</code>, <code>aria-live="assertive"</code>, y el texto dice qué hacer, no solo qué pasó.</p>
+    <p>El error de opciones obligatorias, no. Al intentar agregar sin elegir, la interfaz <strong>solo pinta un badge que dice "Required"</strong>. Sin <code>role="alert"</code>, sin <code>aria-live</code>, sin mover el foco. Con lector de pantalla no pasa nada audible, y el usuario queda esperando que el botón funcione.</p>
+    <p class="criterios">WCAG 3.3.1 Error Identification y 4.1.3 Status Messages, los dos en nivel AA.</p>
+  </div></section>
+
+  <section class="gris"><div class="pag">
+    <p class="tipo">Promesa 4 de 5 · no se sostiene</p>
+    <blockquote class="cita">"Accesibilidad del teclado: funciones que se pueden realizar mediante el teclado."<cite>Declaración de accesibilidad de Glovo</cite></blockquote>
+    <h3>El primer paso del producto necesita mouse</h3>
+    <p>El campo de dirección del home no se puede operar con teclado. Es la primera acción que pide el sitio, antes de ver un solo local, y hay que usar el mouse para pasarla.</p>
+    <p>Hay un camino alternativo con teclado, y por eso es un fallo serio y no un bloqueo total. Pero el camino que el producto ofrece primero, y el único visible, no sirve.</p>
+    <p class="criterios">WCAG 2.1.1 Keyboard, nivel A. Dentro del alcance que la propia declaración define.</p>
+  </div></section>
+
+  <section><div class="pag">
+    <p class="tipo">Promesa 5 de 5 · no se sostiene</p>
+    <blockquote class="cita">"Uso de etiquetas accesibles para elementos interactivos con el fin de garantizar que los lectores de pantalla anuncien su función."<cite>Declaración de accesibilidad de Glovo</cite></blockquote>
+    <h3>40 controles sin nombre en el diálogo por el que pasa todo pedido</h3>
+    <p>Las opciones de personalización de un producto son <strong>40 inputs sin nombre accesible</strong>, metidos dentro de filas con <code>role="button"</code>. 40 de 40.</p>
+    <p>Un lector de pantalla anuncia controles sin decir qué eligen. Es el diálogo de la masa, el tamaño y los extras: por ahí pasa cualquier pedido con opciones.</p>
+    <p class="criterios">WCAG 4.1.2 Name, Role, Value y 1.3.1 Info and Relationships.</p>
+  </div></section>
+
+  <section class="verde"><div class="pag">
+    <h2>El canal para avisar del problema</h2>
+    <blockquote class="cita">"Si tienes algún problema para acceder a los contenidos o funciones, contacta con nuestro equipo de asistencia."<cite>Declaración de accesibilidad de Glovo, sección Limitaciones y alternativas</cite></blockquote>
+    <p>Medido el 8 de octubre, sin cuenta, en el home de Barcelona: el enlace "Contact us" del pie no abre nada. La URL cambia y la página se queda igual.</p>
+    <div class="evidencia">
+      <p class="rotulo">El enlace, y lo que pasa al tocarlo</p>
+<pre>&lt;a href="#open-help-center"&gt;Contact us&lt;/a&gt;
+
+clic  →  glovoapp.com/en/es/barcelona#open-help-center
+         elementos con role="dialog": 0
+         centro de ayuda: no aparece
+         contenido de main: sin cambios</pre>
+    </div>
+    <p style="margin-top:22px">El mismo comportamiento se había medido el 26 de agosto. Seis semanas después sigue igual.</p>
+    <p>La declaración remite a soporte, y soporte requiere cuenta. El enlace que daría acceso sin cuenta es un ancla que no dispara nada, así que una persona que no puede usar el producto tampoco tiene por dónde avisarlo.</p>
+  </div></section>
+
+  <section><div class="pag">
+    <p class="tipo">Fuera de la declaración · 1 de 2</p>
+    <h2>El arreglo llegó a restaurantes y no a tiendas</h2>
+    <p>En agosto el patrón era simple: el producto perdía coherencia cuando el local estaba cerrado. Hoy ya no es cierto entero.</p>
+    <p>Medido con una categoría cerrada completa: Pharmacy &amp; Beauty, 24 locales, ninguno abierto.</p>
+    <table>
+      <thead><tr><th>Qué</th><th>Restaurantes (Little Caesars)</th><th>Tiendas (LUSH)</th></tr></thead>
+      <tbody>
+        <tr><td>"Schedule an order"</td><td>Entra en modo programado, badge "Schedule for 12:00"</td><td>El modal se cierra y no pasa nada</td></tr>
+        <tr><td>Tiempo de entrega con el local cerrado</td><td>Lo reemplaza por "Schedule"</td><td>Sigue mostrando "10-20′"</td></tr>
+        <tr><td>Alternativas</td><td>Carrusel de locales abiertos con foto y rating</td><td>Dos botones de texto</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:26px">El mismo local cerrado se comporta de dos maneras distintas según su vertical. Nada en la interfaz dice en cuál de las dos está el usuario, así que lo que aprendió pidiendo comida no le sirve cuando compra en una tienda.</p>
+  </div></section>
+
+  <section class="gris"><div class="pag">
+    <p class="tipo">Fuera de la declaración · 2 de 2</p>
+    <h2>La búsqueda contesta cualquier cosa con el mismo catálogo</h2>
+    <p class="titular">Buscar "motosierra" devuelve el 69% de los mismos locales que buscar "pizza".</p>
+    <p>68 de 99 locales únicos coinciden. El primer resultado de las dos consultas es el mismo, Domino's Pizza. Y 41 de los 100 resultados de "motosierra" tienen "pizz" en el nombre.</p>
+    <p>No es que falte el estado vacío: <strong>existe y funciona</strong>. El problema es el piso de relevancia, que está tan abajo que una palabra de diccionario que el catálogo no cubre se lleva 100 locales irrelevantes en vez del estado vacío.</p>
+    <div class="evidencia">
+      <p class="rotulo">Siete consultas, mismo método, misma sesión</p>
+      <table style="font-size:16px">
+        <thead><tr><th>Consulta</th><th>Qué es</th><th>Resultados</th></tr></thead>
+        <tbody>
+          <tr><td>pizza</td><td>control, producto real</td><td class="num">100, tope</td></tr>
+          <tr><td>motosierra</td><td>palabra real, producto que Glovo no reparte</td><td class="num">100, tope</td></tr>
+          <tr><td>aeiouaeiou</td><td>sin sentido, letras comunes</td><td class="num">100, tope</td></tr>
+          <tr><td>qqqqqqqq</td><td>sin sentido, una letra rara</td><td class="num">87</td></tr>
+          <tr><td>zzzqqqxyw</td><td>sin sentido, letras raras</td><td class="num">20</td></tr>
+          <tr><td>uranio enriquecido</td><td>dos palabras reales, absurdo</td><td class="num">0, "No results"</td></tr>
+          <tr><td>asdfghjkl</td><td>manotazo de teclado</td><td class="num">0, "No results"</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div></section>
+
+  <section class="accion"><dl class="pag">
+    <div><dt>Qué cuesta</dt><dd>Con teclado no se pasa del primer campo, que es la dirección. Con lector de pantalla el pedido se traba en el diálogo de producto, donde hay 40 controles que no se anuncian y un error que tampoco. Y el canal para avisarlo no se abre sin cuenta.</dd></div>
+    <div><dt>El arreglo</dt><dd>Que el disparador de dirección sea un <strong>botón real</strong> que reciba foco. Un <strong>label por input</strong> en el diálogo de producto, sin tocar el diseño. <strong><code>role="alert"</code></strong> en el error de opciones y mover el foco. Un <strong>link para saltar al contenido</strong>. Subir el <strong>piso de relevancia</strong> de la búsqueda y usar el estado vacío que ya existe. Que el ancla de "Contact us" <strong>apunte a algo</strong>.</dd></div>
+  </dl></section>
+
+  <section><div class="pag">
+    <h2>Método y límites</h2>
+    <p><strong>Qué se midió.</strong> Web desktop, Barcelona, Carrer de Balmes 100, sin login, cookies denegadas. Cuatro páginas: home de ciudad, listado de categoría, resultados de búsqueda y ficha de local, más el diálogo de dirección y el de producto.</p>
+    <p><strong>Cómo.</strong> Navegación directa por URL, inspección del DOM y del árbol de accesibilidad, recorrido con teclado contado Tab por Tab, y cálculo de contraste sobre color y fondo computados.</p>
+    <p><strong>Qué versión de la declaración.</strong> La española. Vale la pena decirlo porque las dos versiones no dicen lo mismo: donde la española afirma que las partes cubiertas "cumplen" WCAG 2.1 AA y EN 301 549, la inglesa dice que las "observe". Esta pieza mide contra la española, que es la que ve un usuario en España.</p>
+    <p><strong>Cuándo.</strong> Hubo dos pasadas: una el 26 de agosto de 2026 y otra el 8 de octubre. Los números de esta pieza son los del 8 de octubre. La comparación entre las dos es lo que permite decir qué se arregló en el medio.</p>
+    <p><strong>Qué no se midió.</strong></p>
+    <table>
+      <tbody>
+        <tr><td>Lector de pantalla real</td><td>Los hallazgos de nombre y de anuncio salen del árbol de accesibilidad, que es buena aproximación y no es lo mismo. Un paso con NVDA o VoiceOver puede confirmar o bajar alguno</td></tr>
+        <tr><td>App nativa</td><td>Solo se midió web</td></tr>
+        <tr><td>Checkout</td><td>Exige cuenta. La medición se detuvo en la puerta de login</td></tr>
+        <tr><td>Versión del estándar</td><td>La declaración dice WCAG 2.1, no 2.2. Los cinco criterios citados existen en 2.1 nivel AA, o sea que están dentro del alcance que la propia declaración define</td></tr>
+        <tr><td>Tope de resultados</td><td>El listado corta en 100. El recorte es el mismo en todas las consultas, así que la comparación entre ellas se sostiene</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:22px"><strong>Reproducible.</strong> Las consultas de búsqueda se repiten con <code>glovoapp.com/en/es/barcelona/search?q=</code> y la consulta.</p>
+  </div></section>
+
+  <footer class="pie"><div class="pag">
+    <span><a class="discreto" href="https://noxquality.com">Nox Quality Studio</a> · <a href="mailto:hello@noxquality.com">hello@noxquality.com</a></span>
+    <span class="firma">
+      <a class="by firma-link" href="https://github.com/missyeahhh">by<span class="sol">sol</span></a>
+    </span>
+  </div></footer>
+
+</article>
+</body>
+</html>

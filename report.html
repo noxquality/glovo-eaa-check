@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glovo, measured against its own accessibility statement · Nox Quality Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<article class="hoja">
+
+  <div class="membrete" aria-hidden="true"></div>
+
+  <header><div class="pag portada">
+      <p class="idioma"><a href="informe.html">Español</a> · <strong>English</strong></p>
+      <h1>Glovo, measured against its own statement</h1>
+      <p class="bajada">Glovo did something very few companies do: it <strong>published an accessibility statement</strong> and committed in writing to WCAG 2.1 Level AA and EN 301 549. That is the standard accessibility is measured against in Europe, so that is the standard used here.</p>
+      <p class="bajada" style="margin-top:14px">The <strong>five specific promises</strong> in that document were checked against the product, one by one. Two hold, one holds halfway, and two do not. The two that fail are fixable, and the fix is smaller than it looks.</p>
+  </div></header>
+
+  <section><div class="pag">
+    <p class="aviso"><strong>Independent, unsolicited measurement, 8 October 2026.</strong> Not affiliated with Glovo and not approved by Glovo. It measures the public product, the way anyone finds it without an account. It does not measure teams, it does not measure people, and no failure is attributed to anyone.</p>
+    <p style="margin-top:28px">This piece <strong>makes no legal claim</strong>. The European Accessibility Act has applied since June 2025 and Spain transposed it through Ley 11/2023, but whether a company meets a legal requirement is for a regulator to decide, not for a private audit. What is checked here is narrower: whether the product does what the document the company published says it does.</p>
+    <div class="evidencia">
+      <p class="rotulo">The statement, linked from the footer of every page, in eight countries</p>
+      <p><a href="https://glovoapp.com/docs/en/legal/regulatory-eaa/">glovoapp.com/docs/en/legal/regulatory-eaa</a></p>
+    </div>
+  </div></section>
+
+  <section class="verde"><div class="pag">
+    <h2>The five promises</h2>
+    <table>
+      <thead><tr><th>The promise, verbatim</th><th>Verdict</th><th>What holds it up or breaks it</th></tr></thead>
+      <tbody>
+        <tr><td>Sufficient colour contrast between text and background</td><td><span class="v v-si">holds</span></td><td>1 failure across 776 text nodes measured: the search placeholder, 4.12:1 against a 4.5:1 threshold</td></tr>
+        <tr><td>Simple navigation, consistent headings and landmarks</td><td><span class="v v-si">holds</span></td><td>Descriptive page titles and a <code>main</code> region. Missing: a skip link, and the title on two pages</td></tr>
+        <tr><td>Clear and descriptive error notifications</td><td><span class="v v-medio">halfway</span></td><td>The missing-address warning is textbook. The required-options error is never announced</td></tr>
+        <tr><td>Keyboard accessibility</td><td><span class="v v-no">does not hold</span></td><td>The address field on the home page, the product's first step, cannot be operated with a keyboard</td></tr>
+        <tr><td>Accessible labels on interactive elements</td><td><span class="v v-no">does not hold</span></td><td>40 of 40 inputs in the product dialog have no accessible name</td></tr>
+      </tbody>
+    </table>
+  </div></section>
+
+  <section><div class="pag">
+    <p class="tipo">Why</p>
+    <h2>Measured against the statement, not against an outside opinion</h2>
+    <p>Because Glovo picked the standard, not an auditor from outside.</p>
+    <p>Taking the document a company published in its own footer, and checking criterion by criterion whether the product does what it says, is harder to argue with than a list of things someone thinks could be better.</p>
+  </div></section>
+
+  <section class="menta"><div class="pag">
+    <h2>What works</h2>
+    <p>Measured with the same method and the same bar as the failures. Promises 1 and 2, contrast and navigation, hold, and this table is the evidence. The other three get a section each, below.</p>
+    <table>
+      <thead><tr><th>What</th><th>Measured</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>The statement itself</td><td>Names the standard and the version, separates third-party content, admits limits, published in 8 countries</td><td class="num">exists</td></tr>
+        <tr><td>Colour contrast</td><td>Visible text nodes with computed colour and background, across 4 pages. The one failure is the search placeholder</td><td class="num">1 failure / 776</td></tr>
+        <tr><td>Alternative text</td><td>Visible images with no <code>alt</code> attribute</td><td class="num">0 / 521</td></tr>
+        <tr><td>Button names</td><td>Visible buttons and <code>role=button</code> with no accessible name</td><td class="num">0 / 126</td></tr>
+        <tr><td>Link names</td><td>Links with no accessible name on home, listing and results</td><td class="num">0 / 298</td></tr>
+        <tr><td>Zoom</td><td><code>maximum-scale=5, user-scalable=yes</code></td><td class="num">not blocked</td></tr>
+        <tr><td>Reflow at 320px</td><td>Horizontal overflow on home, listing and results. The store page does overflow</td><td class="num">3 of 4</td></tr>
+        <tr><td>Address dialog</td><td><code>dialog aria-modal</code>, correct initial focus, Escape closes it and returns focus to the trigger</td><td class="num">well built</td></tr>
+        <tr><td>Missing-address warning</td><td><code>role=alert</code>, <code>aria-live=assertive</code>, and the text says what to do</td><td class="num">well built</td></tr>
+        <tr><td>Fixed since August</td><td>Enter now triggers search, search now returns closed stores with their opening time, the cart no longer swallows the item</td><td class="num">3 fixed</td></tr>
+      </tbody>
+    </table>
+  </div></section>
+
+  <section><div class="pag">
+    <p class="tipo">Promise 3 of 5 · halfway</p>
+    <blockquote class="cita">"Error notifications: Clear and descriptive error messages to guide users in resolving issues."<cite>Glovo accessibility statement</cite></blockquote>
+    <h3>One warning is announced and the other is not</h3>
+    <p>The missing-address warning is textbook: <code>role="alert"</code>, <code>aria-live="assertive"</code>, and the text says what to do, not only what happened.</p>
+    <p>The required-options error is not. Adding a product without picking a required option paints a badge that reads "Required" and nothing else. No <code>role="alert"</code>, no <code>aria-live</code>, no focus move. With a screen reader nothing is announced, so the user is left waiting for a button that already responded.</p>
+    <p class="criterios">WCAG 3.3.1 Error Identification and 4.1.3 Status Messages, both Level AA.</p>
+  </div></section>
+
+  <section class="gris"><div class="pag">
+    <p class="tipo">Promise 4 of 5 · does not hold</p>
+    <blockquote class="cita">"Keyboard accessibility: Functions that can be operated via keyboard."<cite>Glovo accessibility statement</cite></blockquote>
+    <h3>The product's first step needs a mouse</h3>
+    <p>The address field on the home page cannot be operated with a keyboard. It is the first thing the site asks for, before a single store is visible, and getting past it takes a mouse.</p>
+    <p>There is an alternative keyboard path, which is why this is a serious failure and not a full block. The path the product offers first, and the only one on screen, does not work.</p>
+    <p class="criterios">WCAG 2.1.1 Keyboard, Level A. Inside the scope the statement defines for itself.</p>
+  </div></section>
+
+  <section><div class="pag">
+    <p class="tipo">Promise 5 of 5 · does not hold</p>
+    <blockquote class="cita">"Accessible labels for interactive elements to ensure screen readers announce their function."<cite>Glovo accessibility statement</cite></blockquote>
+    <h3>40 controls with no name, in the dialog every order goes through</h3>
+    <p>The options that customise a product are <strong>40 inputs with no accessible name</strong>, sitting inside rows marked <code>role="button"</code>. 40 out of 40.</p>
+    <p>A screen reader announces controls without saying what they choose. This is the dialog for the base, the size and the extras, so any order with options passes through it.</p>
+    <p class="criterios">WCAG 4.1.2 Name, Role, Value and 1.3.1 Info and Relationships.</p>
+  </div></section>
+
+  <section class="verde"><div class="pag">
+    <h2>The channel for reporting the problem</h2>
+    <blockquote class="cita">"If you encounter any difficulty accessing content or features, please reach out to our support team."<cite>Glovo accessibility statement, Limitations and Alternatives</cite></blockquote>
+    <p>Measured on 8 October, with no account, on the Barcelona home page: the "Contact us" link in the footer opens nothing. The URL changes and the page stays where it was.</p>
+    <div class="evidencia">
+      <p class="rotulo">The link, and what happens on click</p>
+<pre>&lt;a href="#open-help-center"&gt;Contact us&lt;/a&gt;
+
+click  →  glovoapp.com/en/es/barcelona#open-help-center
+          elements with role="dialog": 0
+          help centre: does not appear
+          contents of main: unchanged</pre>
+    </div>
+    <p style="margin-top:22px">The same behaviour was measured on 26 August. Six weeks later it is unchanged.</p>
+    <p>The statement points to support, and support needs an account. The link that would give access without one is an anchor that fires nothing, so somebody who cannot use the product has no way to say so either.</p>
+  </div></section>
+
+  <section><div class="pag">
+    <p class="tipo">Outside the statement · 1 of 2</p>
+    <h2>The fix reached restaurants and not shops</h2>
+    <p>In August the pattern was simple: the product lost coherence when a store was closed. That is no longer true across the board.</p>
+    <p>Measured with an entire category closed: Pharmacy &amp; Beauty, 24 stores, none of them open.</p>
+    <table>
+      <thead><tr><th>What</th><th>Restaurants (Little Caesars)</th><th>Shops (LUSH)</th></tr></thead>
+      <tbody>
+        <tr><td>"Schedule an order"</td><td>Switches to scheduled mode, badge reads "Schedule for 12:00"</td><td>The modal closes and nothing happens</td></tr>
+        <tr><td>Delivery time with the store closed</td><td>Replaced by "Schedule"</td><td>Still shows "10-20′"</td></tr>
+        <tr><td>Alternatives offered</td><td>Carousel of open stores with photo and rating</td><td>Two text buttons</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:26px">The same closed store behaves in two different ways depending on its vertical. Nothing in the interface says which of the two the user is in, so what they learned ordering food does not carry over to buying from a shop.</p>
+  </div></section>
+
+  <section class="gris"><div class="pag">
+    <p class="tipo">Outside the statement · 2 of 2</p>
+    <h2>Search answers anything with the same catalogue</h2>
+    <p class="titular">Searching "motosierra", Spanish for chainsaw, returns 69% of the same stores as searching "pizza".</p>
+    <p>68 of 99 unique stores overlap. The first result for both queries is the same one, Domino's Pizza. And 41 of the 100 results for "motosierra" have "pizz" in their name.</p>
+    <p>The empty state is not missing: <strong>it exists and it works</strong>. What fails is the relevance floor, set low enough that a dictionary word the catalogue does not cover pulls 100 irrelevant stores instead of the empty state.</p>
+    <div class="evidencia">
+      <p class="rotulo">Seven queries, same method, same session</p>
+      <table style="font-size:16px">
+        <thead><tr><th>Query</th><th>What it is</th><th>Results</th></tr></thead>
+        <tbody>
+          <tr><td>pizza</td><td>control, a real product</td><td class="num">100, the cap</td></tr>
+          <tr><td>motosierra</td><td>a real word, a product Glovo does not deliver</td><td class="num">100, the cap</td></tr>
+          <tr><td>aeiouaeiou</td><td>nonsense, common letters</td><td class="num">100, the cap</td></tr>
+          <tr><td>qqqqqqqq</td><td>nonsense, one rare letter</td><td class="num">87</td></tr>
+          <tr><td>zzzqqqxyw</td><td>nonsense, rare letters</td><td class="num">20</td></tr>
+          <tr><td>uranio enriquecido</td><td>two real words, an absurd product</td><td class="num">0, "No results"</td></tr>
+          <tr><td>asdfghjkl</td><td>keyboard mash</td><td class="num">0, "No results"</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div></section>
+
+  <section class="accion"><dl class="pag">
+    <div><dt>What it costs</dt><dd>With a keyboard you do not get past the first field, which is the address. With a screen reader the order stalls in the product dialog, where 40 controls go unannounced and so does the error. And the channel for reporting it does not open without an account.</dd></div>
+    <div><dt>The fix</dt><dd>Make the address trigger a <strong>real button</strong> that takes focus. One <strong>label per input</strong> in the product dialog, no visual redesign needed. <strong><code>role="alert"</code></strong> on the required-options error, plus a focus move. A <strong>skip link</strong>. Raise the <strong>relevance floor</strong> in search and use the empty state that already exists. Point the "Contact us" anchor <strong>at something</strong>.</dd></div>
+  </dl></section>
+
+  <section><div class="pag">
+    <h2>Method and limits</h2>
+    <p><strong>What was measured.</strong> Desktop web, Barcelona, Carrer de Balmes 100, no login, cookies declined. Four pages: city home, category listing, search results and store page, plus the address dialog and the product dialog.</p>
+    <p><strong>How.</strong> Direct URL navigation, inspection of the DOM and the accessibility tree, a keyboard pass counted Tab by Tab, and contrast calculated on computed colour and background.</p>
+    <p><strong>Which version of the statement.</strong> The Spanish one, and that is worth saying because the two versions do not match. The Spanish text states that the covered parts "cumplen" (comply with) WCAG 2.1 AA and EN 301 549; the English text says they "observe" them. This piece measures against the Spanish version, which is the one a user in Spain is served.</p>
+    <p><strong>When.</strong> There were two passes, one on 26 August 2026 and one on 8 October. The numbers here are from 8 October. Comparing the two is what makes it possible to say what got fixed in between.</p>
+    <p><strong>What was not measured.</strong></p>
+    <table>
+      <tbody>
+        <tr><td>A real screen reader</td><td>The name and announcement findings come from the accessibility tree, which is a good approximation and not the same thing. A pass with NVDA or VoiceOver could confirm or downgrade some of them</td></tr>
+        <tr><td>The native app</td><td>Web only</td></tr>
+        <tr><td>Checkout</td><td>It requires an account. The measurement stopped at the login gate</td></tr>
+        <tr><td>Version of the standard</td><td>The statement says WCAG 2.1, not 2.2. All five criteria cited here exist in 2.1 Level AA, so they sit inside the scope the statement defines for itself</td></tr>
+        <tr><td>The results cap</td><td>The listing stops at 100. The cut is the same for every query, so the comparison between them still stands</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:22px"><strong>Reproducible.</strong> The search queries repeat with <code>glovoapp.com/en/es/barcelona/search?q=</code> and the query.</p>
+  </div></section>
+
+  <footer class="pie"><div class="pag">
+    <span><a class="discreto" href="https://noxquality.com">Nox Quality Studio</a> · <a href="mailto:hello@noxquality.com">hello@noxquality.com</a></span>
+    <span class="firma">
+      <a class="by firma-link" href="https://github.com/missyeahhh">by<span class="sol">sol</span></a>
+    </span>
+  </div></footer>
+
+</article>
+</body>
+</html>
